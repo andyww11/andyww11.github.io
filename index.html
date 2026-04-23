@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andy의 홈페이지</title>
+<title>Hwanseok Chang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -25,554 +25,225 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.7; font-size: 16px; }
 
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--text-primary);
-    line-height: 1.7;
-    font-size: 16px;
-  }
-
-  /* ── Navigation ── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: rgba(247, 245, 240, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 2rem; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
   }
-
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
-  }
-
+  .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--text-primary); text-decoration: none; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+  .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
 
-  /* ── Layout ── */
-  .page-wrapper {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+  .page-wrapper { max-width: 880px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
 
-  section {
-    padding: 80px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  section:last-child { border-bottom: none; }
-
-  /* ── Hero ── */
+  /* Hero */
   #hero {
-    padding-top: 140px;
-    padding-bottom: 80px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: start;
+    padding-top: 130px; padding-bottom: 80px;
+    display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start;
   }
-
   .hero-tag {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--accent-mid);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-family: var(--mono); font-size: 0.73rem; color: var(--accent-mid);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
   }
-
-  .hero-tag::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 1px;
-    background: var(--accent-mid);
-  }
-
-  h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    max-width: 560px;
-    margin-bottom: 2rem;
-  }
-
-  .hero-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
+  .hero-tag::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--accent-mid); }
+  h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .hero-name-kr { font-size: 1rem; font-weight: 400; color: var(--text-muted); margin-bottom: 1.2rem; letter-spacing: 0.05em; }
+  .hero-desc { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.8; max-width: 520px; margin-bottom: 1.75rem; }
+  .hero-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.6rem 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.2s;
-    letter-spacing: 0.01em;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.5rem 1rem; font-size: 0.83rem; font-weight: 500;
+    text-decoration: none; border-radius: 4px; transition: all 0.2s;
   }
-
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-  }
-
+  .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: #1e4a78; }
+  .btn-secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-strong); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
 
-  .btn-secondary {
-    background: transparent;
-    color: var(--text-secondary);
-    border: 1px solid var(--border-strong);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-light);
-  }
-
-  .hero-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #c8d8eb 0%, #e8f0f8 100%);
-    border: 3px solid var(--surface);
-    box-shadow: 0 0 0 1px var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-size: 2.5rem;
-    color: var(--accent);
-    flex-shrink: 0;
+  .hero-photo {
+    width: 140px; height: 140px; border-radius: 50%;
     overflow: hidden;
+    border: 3px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(42,92,143,0.10);
+    flex-shrink: 0;
   }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-  .hero-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  /* Scholar / ORCID badges */
+  .profile-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.1rem; }
+  .profile-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+    padding: 0.25rem 0.7rem; border-radius: 4px; text-decoration: none;
+    border: 1px solid; transition: all 0.2s;
   }
+  .badge-scholar { color: #1a73e8; border-color: #c5d9f7; background: #f0f6ff; }
+  .badge-scholar:hover { background: #1a73e8; color: #fff; }
+  .badge-orcid { color: #a6ce39; border-color: #d4edaa; background: #f4faeb; }
+  .badge-orcid:hover { background: #a6ce39; color: #fff; }
 
-  /* ── Section headings ── */
-  .section-label {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--accent-mid);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
+  /* Section headings */
+  .section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent-mid); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  h2 { font-family: var(--serif); font-size: 1.85rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 2rem; }
 
-  h2 {
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    margin-bottom: 2rem;
-  }
-
-  /* ── About ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.8;
-  }
-
-  .about-interests {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-  }
-
-  .about-interests h3 {
-    font-size: 0.8rem;
-    font-family: var(--mono);
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-  }
-
-  .interest-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-  }
-
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .about-text p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.8; font-size: 0.95rem; }
+  .about-interests { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+  .about-interests h3 { font-size: 0.68rem; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .interest-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
   .interest-item:last-child { border-bottom: none; }
+  .interest-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-mid); margin-top: 7px; flex-shrink: 0; }
 
-  .interest-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-mid);
-    margin-top: 7px;
-    flex-shrink: 0;
-  }
-
-  /* ── Skills ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .skill-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    transition: border-color 0.2s;
-  }
-
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; transition: border-color 0.2s; }
   .skill-card:hover { border-color: var(--accent-mid); }
+  .skill-category { font-family: var(--mono); font-size: 0.67rem; color: var(--accent-mid); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-tag { font-size: 0.77rem; color: var(--text-secondary); background: var(--bg); border: 1px solid var(--border); padding: 0.2rem 0.55rem; border-radius: 3px; font-family: var(--mono); }
 
-  .skill-category {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--accent-mid);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
+  /* Publications */
+  .pub-filter { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .pub-filter-btn {
+    font-family: var(--mono); font-size: 0.73rem; padding: 0.3rem 0.8rem;
+    border-radius: 4px; border: 1px solid var(--border-strong);
+    background: transparent; color: var(--text-secondary);
+    cursor: pointer; transition: all 0.2s; letter-spacing: 0.04em;
   }
+  .pub-filter-btn.active, .pub-filter-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+  .pub-list { display: flex; flex-direction: column; }
+  .pub-item {
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: 52px 1fr; gap: 1.25rem; align-items: start;
   }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-item[data-type="hidden"] { display: none; }
 
-  .skill-tag {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
-    border-radius: 3px;
-    font-family: var(--mono);
+  .pub-num { font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted); padding-top: 3px; text-align: right; }
+
+  .pub-badge {
+    display: inline-block; font-family: var(--mono); font-size: 0.67rem;
+    padding: 0.12rem 0.5rem; border-radius: 3px; margin-bottom: 0.45rem; font-weight: 500;
   }
+  .pub-badge.published { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+  .pub-badge.in-prep { background: #fff8e1; color: #e65100; border: 1px solid #ffe082; }
+  .pub-badge.patent { background: var(--accent-light); color: var(--accent); border: 1px solid #b3d1ea; }
 
-  /* ── Projects ── */
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
+  .pub-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.3rem; }
+  .pub-authors { font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.25rem; line-height: 1.6; }
+  .pub-authors strong { color: var(--text-primary); font-weight: 600; }
+  .pub-journal { font-size: 0.84rem; color: var(--accent-mid); font-style: italic; margin-bottom: 0.5rem; }
+  .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .pub-link { font-size: 0.74rem; font-family: var(--mono); color: var(--accent); text-decoration: none; border: 1px solid var(--accent-light); padding: 0.15rem 0.55rem; border-radius: 3px; transition: all 0.2s; }
+  .pub-link:hover { background: var(--accent); color: #fff; }
 
-  .project-card {
+  .pub-stat {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    align-items: start;
-    transition: border-color 0.2s, transform 0.2s;
+    border-radius: 6px;
+    display: inline-block;
   }
+  .pub-stat span { color: var(--accent); font-weight: 500; }
 
-  .project-card:hover {
-    border-color: var(--accent-mid);
-    transform: translateX(4px);
-  }
-
-  .project-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.4rem;
-  }
-
-  .project-desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .project-tag {
-    font-size: 0.75rem;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 0.15rem 0.55rem;
-    border-radius: 3px;
-    font-family: var(--mono);
-  }
-
-  .project-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .project-link {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    border: 1px solid var(--accent-light);
-    padding: 0.3rem 0.7rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    transition: all 0.2s;
-    text-align: center;
-  }
-
-  .project-link:hover { background: var(--accent); color: #fff; }
-
-  /* ── Timeline (Career & Education) ── */
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 1px;
-    background: var(--border);
-  }
-
-  .timeline-item {
-    position: relative;
-    padding-bottom: 2.5rem;
-  }
-
+  /* Timeline */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
+  .timeline-item { position: relative; padding-bottom: 2.25rem; }
   .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-dot { position: absolute; left: -2.375rem; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--accent); }
+  .timeline-dot.current { background: #2e7d32; box-shadow: 0 0 0 1px #2e7d32; }
+  .timeline-period { font-family: var(--mono); font-size: 0.73rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+  .timeline-role { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem; }
+  .timeline-org { font-size: 0.875rem; color: var(--accent-mid); margin-bottom: 0.4rem; font-weight: 500; }
+  .timeline-detail { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
 
-  .timeline-dot {
-    position: absolute;
-    left: -2.375rem;
-    top: 6px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 2px solid var(--bg);
-    box-shadow: 0 0 0 1px var(--accent);
-  }
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; transition: all 0.2s; }
+  .contact-item:hover { border-color: var(--accent-mid); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(42,92,143,0.08); }
+  .contact-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-icon svg { width: 18px; height: 18px; fill: var(--accent); }
+  .contact-label { font-size: 0.68rem; font-family: var(--mono); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.15rem; }
+  .contact-value { font-size: 0.875rem; font-weight: 500; color: var(--text-primary); }
 
-  .timeline-period {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
-  }
+  footer { text-align: center; padding: 2.5rem 2rem; font-size: 0.78rem; font-family: var(--mono); color: var(--text-muted); border-top: 1px solid var(--border); }
 
-  .timeline-role {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-  }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  .timeline-org {
-    font-size: 0.9rem;
-    color: var(--accent-mid);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-
-  .timeline-detail {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-  }
-
-  /* ── Contact ── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .contact-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .contact-item:hover {
-    border-color: var(--accent-mid);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(42, 92, 143, 0.08);
-  }
-
-  .contact-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: var(--accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .contact-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--accent);
-  }
-
-  .contact-label {
-    font-size: 0.75rem;
-    font-family: var(--mono);
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.2rem;
-  }
-
-  .contact-value {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-primary);
-  }
-
-  /* ── Footer ── */
-  footer {
-    text-align: center;
-    padding: 2.5rem 2rem;
-    font-size: 0.8rem;
-    font-family: var(--mono);
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
-  }
-
-  /* ── Fade-in animation ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── Responsive ── */
   @media (max-width: 640px) {
-    nav { display: none; }
+    .nav-links { display: none; }
     #hero { grid-template-columns: 1fr; }
-    .hero-avatar { display: none; }
+    .hero-photo { width: 100px; height: 100px; }
     .about-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
-    .project-card { grid-template-columns: 1fr; }
+    .pub-item { grid-template-columns: 1fr; }
+    .pub-num { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
-  <a href="#hero" class="nav-logo">Andy</a>
+  <a href="#hero" class="nav-logo">Hwanseok Chang</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
     <li><a href="#career">Career</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- Hero -->
 <div class="page-wrapper">
+
+  <!-- Hero -->
   <section id="hero">
     <div>
-      <p class="hero-tag">Researcher · Developer</p>
-      <h1>안녕하세요,<br>Andy입니다.</h1>
+      <p class="hero-tag">Ph.D. Candidate · Korea University</p>
+      <h1>Hwanseok Chang</h1>
+      <p class="hero-name-kr">장환석</p>
       <p class="hero-desc">
-        저는 [관심 분야]를 연구하는 학생입니다.
-        데이터와 코드로 세상의 문제를 해결하는 것에 관심이 있으며,
-        새로운 기술을 배우고 적용하는 것을 즐깁니다.
+        고려대학교 신소재공학부 박사과정 연구자입니다.
+        나노구조체 역설계 및 3D 나노 아키텍처 응용을 중심으로
+        광학 시뮬레이션과 나노 공정 실험을 융합한 연구를 수행하고 있습니다.
       </p>
       <div class="hero-links">
-        <a href="#projects" class="btn btn-primary">프로젝트 보기 →</a>
-        <a href="#contact" class="btn btn-secondary">연락하기</a>
-        <a href="#" class="btn btn-secondary">CV 다운로드</a>
+        <a href="#publications" class="btn btn-primary">Publications →</a>
+        <a href="#contact" class="btn btn-secondary">Contact</a>
+        <a href="#" class="btn btn-secondary">CV (준비 중)</a>
+      </div>
+      <div class="profile-badges">
+        <a href="https://scholar.google.com/citations?user=DQbIvvYAAAAJ&hl=ko" target="_blank" class="profile-badge badge-scholar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://orcid.org/0009-0003-8513-5261" target="_blank" class="profile-badge badge-orcid">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.42.947.947s-.422.947-.947.947a.947.947 0 0 1 0-1.894zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.9-2.297 3.9-3.722 0-2.016-1.284-3.722-3.9-3.722h-2.297z"/></svg>
+          ORCID: 0009-0003-8513-5261
+        </a>
       </div>
     </div>
-    <div class="hero-avatar">A</div>
+    <div class="hero-photo">
+      <img src="profile.jpg" alt="Hwanseok Chang 장환석">
+    </div>
   </section>
 
   <!-- About -->
@@ -582,35 +253,21 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          저는 [대학교/연구기관]에서 [전공]을 공부하고 있는 Andy입니다.
-          주요 연구 분야는 [연구 분야]이며, 특히 [구체적 관심사]에 집중하고 있습니다.
+          저는 고려대학교 신소재공학부에서 박사과정을 밟고 있는 장환석입니다.
+          학부·석사·박사 모두 동일 학과에서 수학하며 나노포토닉스 분야를 깊이 연구하고 있습니다.
         </p>
         <p>
-          학문적 연구뿐 아니라 실제 문제를 해결하는 프로젝트에도 관심이 많습니다.
-          항상 새로운 것을 배우고, 배운 것을 공유하려 노력합니다.
+          주요 연구는 나노구조체의 역설계(Inverse design)와 메타물질(Metamaterials)이며,
+          FDTD·RCWA 기반 광학 시뮬레이션과 E-beam Lithography, ALD 등 고도 나노 공정을 결합하여
+          3D 나노 아키텍처를 설계하고 구현합니다.
         </p>
-        <p>
-          궁금하신 점이 있거나 협업 제안이 있으시면 언제든지 연락해 주세요!
-        </p>
+        <p>협업 또는 문의 사항이 있으시면 언제든지 연락해 주세요!</p>
       </div>
       <div class="about-interests">
         <h3>Research Interests</h3>
-        <div class="interest-item">
-          <div class="interest-dot"></div>
-          <span>관심 연구 분야 1 (예: Machine Learning)</span>
-        </div>
-        <div class="interest-item">
-          <div class="interest-dot"></div>
-          <span>관심 연구 분야 2 (예: Data Science)</span>
-        </div>
-        <div class="interest-item">
-          <div class="interest-dot"></div>
-          <span>관심 연구 분야 3 (예: Computer Vision)</span>
-        </div>
-        <div class="interest-item">
-          <div class="interest-dot"></div>
-          <span>관심 연구 분야 4 (예: NLP)</span>
-        </div>
+        <div class="interest-item"><div class="interest-dot"></div><span>Inverse design of nanofabrication</span></div>
+        <div class="interest-item"><div class="interest-dot"></div><span>Metamaterials</span></div>
+        <div class="interest-item"><div class="interest-dot"></div><span>Applications of 3D nanoarchitecture</span></div>
       </div>
     </div>
   </section>
@@ -621,86 +278,113 @@
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <p class="skill-category">Languages</p>
+        <p class="skill-category">Simulation &amp; Programming</p>
         <div class="skill-tags">
+          <span class="skill-tag">FDTD (Lumerical)</span>
+          <span class="skill-tag">RCWA (Lumerical)</span>
           <span class="skill-tag">Python</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">MATLAB</span>
         </div>
       </div>
       <div class="skill-card">
-        <p class="skill-category">Frameworks</p>
+        <p class="skill-category">Nanofabrication</p>
         <div class="skill-tags">
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">E-beam Lithography</span>
+          <span class="skill-tag">3D Lithography</span>
+          <span class="skill-tag">Mask Aligner</span>
+          <span class="skill-tag">ALD</span>
+          <span class="skill-tag">E-beam Evaporator</span>
+          <span class="skill-tag">FIB</span>
+          <span class="skill-tag">Ellipsometer</span>
         </div>
       </div>
       <div class="skill-card">
-        <p class="skill-category">Tools</p>
+        <p class="skill-category">Characterization</p>
         <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">LaTeX</span>
+          <span class="skill-tag">SEM</span>
+          <span class="skill-tag">TEM</span>
+          <span class="skill-tag">XRD</span>
+          <span class="skill-tag">XPS</span>
+          <span class="skill-tag">Raman</span>
+          <span class="skill-tag">GIWAXS</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="fade-in">
+  <!-- Publications -->
+  <section id="publications" class="fade-in">
     <p class="section-label">// 03</p>
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-card">
+    <h2>Publications</h2>
+
+    <div class="pub-stat">
+      Total <span>22</span> peer-reviewed journal articles &nbsp;·&nbsp;
+      1st &amp; corresponding: <span>12</span> &nbsp;·&nbsp; Co-authored: <span>9</span>
+      <br>
+      <span style="font-size:0.68rem; color:var(--text-muted);">† equal contribution &nbsp;/&nbsp; * corresponding author</span>
+    </div>
+
+    <div class="pub-filter">
+      <button class="pub-filter-btn active" onclick="filterPubs('all', this)">All</button>
+      <button class="pub-filter-btn" onclick="filterPubs('published', this)">Published</button>
+      <button class="pub-filter-btn" onclick="filterPubs('in-prep', this)">In Preparation</button>
+      <button class="pub-filter-btn" onclick="filterPubs('patent', this)">Patent</button>
+    </div>
+
+    <div class="pub-list" id="pubList">
+
+      <!-- [22] -->
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[22]</p>
         <div>
-          <p class="project-title">프로젝트 이름 1</p>
-          <p class="project-desc">프로젝트에 대한 간단한 설명을 여기에 작성하세요. 어떤 문제를 해결했는지, 어떤 기술을 사용했는지 설명합니다.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">PyTorch</span>
-            <span class="project-tag">ML</span>
+          <span class="pub-badge published">Published</span>
+          <p class="pub-title">A Battery-Free, Wireless Graphene Pressure Sensor for Machine Learning–Assisted Posture Classification and AR/VR Visualization in Smart Healthcare Environments</p>
+          <p class="pub-authors">Myungwoo Choi†, Younghan Kim†, Hyeonseok Han†, Gongkyu Byeon†, Yonghee Lee, Jeong A Han, Nam Hyeong Lee, Sang Won Kim, Hakyoung Lee, Yoorim Loh, Sangbin Lee, <strong>Dong Gyun Hong</strong>, Sunwoo Lee, Seokjoo Cho, Jewook Kim, Jeong-O Lee, <strong>Jungmo Kim</strong>, <strong>Seung Yol Jeong</strong>, Jun Chang Yang, Sunjin Yu*, Seokwoo Jeon*, Donghwi Cho*, Inkyu Park*, and Yong Suk Oh*</p>
+          <p class="pub-journal">Mater. Horiz., Advance Article, 2026</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">DOI</a>
+            <a href="#" class="pub-link">Link</a>
           </div>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">GitHub</a>
-          <a href="#" class="project-link">Demo</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- [21] ~ [1]: 아래에 실제 논문을 추가하세요 -->
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[21]</p>
         <div>
-          <p class="project-title">프로젝트 이름 2</p>
-          <p class="project-desc">두 번째 프로젝트에 대한 설명입니다. 연구 또는 개발 프로젝트의 목적과 성과를 간략히 서술하세요.</p>
-          <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">API</span>
+          <span class="pub-badge published">Published</span>
+          <p class="pub-title">논문 제목을 여기에 입력하세요</p>
+          <p class="pub-authors"><strong>H. Chang</strong>, 공저자, 교신저자*</p>
+          <p class="pub-journal">Journal Name, vol. X, pp. XXX–XXX, 202X.</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">DOI</a>
           </div>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">GitHub</a>
-          <a href="#" class="project-link">Paper</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="pub-item" data-category="in-prep">
+        <p class="pub-num">prep</p>
         <div>
-          <p class="project-title">프로젝트 이름 3</p>
-          <p class="project-desc">세 번째 프로젝트에 대한 설명입니다. 팀 프로젝트라면 본인의 역할도 간략히 언급하면 좋습니다.</p>
-          <div class="project-tags">
-            <span class="project-tag">Data</span>
-            <span class="project-tag">Visualization</span>
-            <span class="project-tag">SQL</span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">GitHub</a>
+          <span class="pub-badge in-prep">In Preparation</span>
+          <p class="pub-title">준비 중인 논문 제목을 여기에 입력하세요</p>
+          <p class="pub-authors"><strong>H. Chang</strong>, 공저자</p>
+          <p class="pub-journal">Target journal 예정</p>
         </div>
       </div>
+
+      <div class="pub-item" data-category="patent">
+        <p class="pub-num">특허</p>
+        <div>
+          <span class="pub-badge patent">Patent</span>
+          <p class="pub-title">특허 제목을 여기에 입력하세요</p>
+          <p class="pub-authors"><strong>장환석</strong> 외 발명자</p>
+          <p class="pub-journal">출원번호 또는 등록번호</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">특허 정보</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -710,18 +394,18 @@
     <h2>Career</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2024.03 — 현재</p>
-        <p class="timeline-role">연구 인턴 / Research Intern</p>
-        <p class="timeline-org">회사 또는 연구실 이름</p>
-        <p class="timeline-detail">담당 업무 및 성과를 간략히 서술하세요. 어떤 프로젝트에 참여했으며 어떤 기여를 했는지 작성합니다.</p>
+        <div class="timeline-dot current"></div>
+        <p class="timeline-period">2025.03 — 현재</p>
+        <p class="timeline-role">박사과정 / Ph.D. Candidate</p>
+        <p class="timeline-org">고려대학교 신소재공학부, 서울</p>
+        <p class="timeline-detail">나노구조체 역설계 및 3D 나노 아키텍처 응용 연구 수행 중.</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-period">2023.07 — 2024.02</p>
-        <p class="timeline-role">학부 연구생 / Undergraduate Researcher</p>
-        <p class="timeline-org">연구실 이름, 대학교</p>
-        <p class="timeline-detail">연구 내용 및 참여 프로젝트를 서술하세요. 지도 교수님이나 주요 성과를 포함할 수 있습니다.</p>
+        <p class="timeline-period">2022.09 — 2022.12</p>
+        <p class="timeline-role">현장실습 인턴 / Research Intern</p>
+        <p class="timeline-org">KIST 전자재료연구센터, 서울</p>
+        <p class="timeline-detail">전자재료 분야 연구에 참여하여 실험 및 분석 업무 수행.</p>
       </div>
     </div>
   </section>
@@ -732,18 +416,32 @@
     <h2>Education</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2022 — 현재</p>
-        <p class="timeline-role">학사 / B.S. in [전공명]</p>
-        <p class="timeline-org">대학교 이름</p>
-        <p class="timeline-detail">주요 수강 과목, GPA, 수상 경력 등을 기재하세요.</p>
+        <div class="timeline-dot current"></div>
+        <p class="timeline-period">2025.03 — 현재</p>
+        <p class="timeline-role">박사과정 / Ph.D. in Materials Science &amp; Engineering</p>
+        <p class="timeline-org">고려대학교 (Korea University), 서울</p>
+        <p class="timeline-detail">신소재공학부 박사과정. 나노포토닉스 및 3D 나노 리소그래피 연구.</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-period">2019 — 2022</p>
-        <p class="timeline-role">고등학교 졸업</p>
-        <p class="timeline-org">고등학교 이름</p>
-        <p class="timeline-detail">관련 수상 또는 특이사항을 작성하세요.</p>
+        <p class="timeline-period">2023.03 — 2025.02</p>
+        <p class="timeline-role">석사 / M.S. in Materials Science &amp; Engineering</p>
+        <p class="timeline-org">고려대학교 (Korea University), 서울</p>
+        <p class="timeline-detail">신소재공학부 석사 졸업.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2018.03 — 2023.02</p>
+        <p class="timeline-role">학사 / B.S. in Materials Science &amp; Engineering</p>
+        <p class="timeline-org">고려대학교 (Korea University), 서울</p>
+        <p class="timeline-detail">신소재공학부 학사 졸업.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2014.03 — 2017.02</p>
+        <p class="timeline-role">졸업 / High School Diploma</p>
+        <p class="timeline-org">한성과학고등학교, 서울</p>
+        <p class="timeline-detail">과학 중점 교육과정 이수.</p>
       </div>
     </div>
   </section>
@@ -753,60 +451,86 @@
     <p class="section-label">// 06</p>
     <h2>Contact</h2>
     <div class="contact-grid">
-      <a href="mailto:your@email.com" class="contact-item">
+      <a href="mailto:andyww11@korea.ac.kr" class="contact-item">
         <div class="contact-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div>
           <p class="contact-label">Email</p>
-          <p class="contact-value">your@email.com</p>
+          <p class="contact-value">andyww11@korea.ac.kr</p>
+        </div>
+      </a>
+      <a href="tel:01022475774" class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">Phone</p>
+          <p class="contact-value">010-2247-5774</p>
+        </div>
+      </a>
+      <a href="https://scholar.google.com/citations?user=DQbIvvYAAAAJ&hl=ko" target="_blank" class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">Google Scholar</p>
+          <p class="contact-value">DQbIvvYAAAAJ</p>
+        </div>
+      </a>
+      <a href="https://orcid.org/0009-0003-8513-5261" target="_blank" class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.42.947.947s-.422.947-.947.947a.947.947 0 0 1 0-1.894zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.9-2.297 3.9-3.722 0-2.016-1.284-3.722-3.9-3.722h-2.297z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">ORCID</p>
+          <p class="contact-value">0009-0003-8513-5261</p>
         </div>
       </a>
       <a href="https://github.com/andyww11" target="_blank" class="contact-item">
         <div class="contact-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </div>
         <div>
           <p class="contact-label">GitHub</p>
           <p class="contact-value">github.com/andyww11</p>
         </div>
       </a>
-      <a href="https://linkedin.com/in/" target="_blank" class="contact-item">
+      <a href="https://andyww11.github.io/" target="_blank" class="contact-item">
         <div class="contact-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
         </div>
         <div>
-          <p class="contact-label">LinkedIn</p>
-          <p class="contact-value">linkedin.com/in/andy</p>
-        </div>
-      </a>
-      <a href="https://github.com/andyww11/andyww11.github.io" target="_blank" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">Homepage Source</p>
-          <p class="contact-value">GitHub Pages</p>
+          <p class="contact-label">Homepage</p>
+          <p class="contact-value">andyww11.github.io</p>
         </div>
       </a>
     </div>
   </section>
+
 </div>
 
 <footer>
-  © 2026 Andy · Built with HTML &amp; CSS · Hosted on GitHub Pages
+  © 2026 Hwanseok Chang (장환석) · Ph.D. Candidate · Korea University · Materials Science &amp; Engineering
 </footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function filterPubs(type, btn) {
+    document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pub-item').forEach(item => {
+      if (type === 'all' || item.dataset.category === type) {
+        item.style.display = 'grid';
+      } else {
+        item.style.display = 'none';
       }
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }
 </script>
 </body>
 </html>
