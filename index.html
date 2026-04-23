@@ -314,128 +314,106 @@
   </section>
 
   <!-- Publications -->
-  <section id="publications" class="fade-in">
-    <p class="section-label">// 03</p>
-    <h2>Publications</h2>
+<section id="publications" class="fade-in">
+  <p class="section-label">// 03</p>
+  <h2>Publications</h2>
 
-    <div class="pub-stat">
-      Total <span>3</span> peer-reviewed journal articles &nbsp;·&nbsp;
-      1st &amp; corresponding: <span>2</span> &nbsp;·&nbsp; Co-authored: <span>1</span>
-      <br>
-      <span style="font-size:0.68rem; color:var(--text-muted);">† equal contribution &nbsp;/&nbsp; * corresponding author</span>
-    </div>
+  <div class="pub-stat">
+    Total <span>3</span> peer-reviewed journal articles &nbsp;·&nbsp;
+    1st &amp; corresponding: <span>2</span> &nbsp;·&nbsp; Co-authored: <span>1</span>
+    <br>
+    <span style="font-size:0.68rem; color:var(--text-muted);">† equal contribution &nbsp;/&nbsp; * corresponding author</span>
+  </div>
 
-    <div class="pub-filter">
-      <button class="pub-filter-btn active" onclick="filterPubs('all', this)">All</button>
-      <button class="pub-filter-btn" onclick="filterPubs('published', this)">Published</button>
-      <button class="pub-filter-btn" onclick="filterPubs('in-prep', this)">In Preparation</button>
-      <button class="pub-filter-btn" onclick="filterPubs('patent', this)">Patent</button>
-    </div>
+  <div class="pub-filter">
+    <button class="pub-filter-btn active" onclick="filterPubs('all', this)">All</button>
+    <button class="pub-filter-btn" onclick="filterPubs('published', this)">Published</button>
+    <button class="pub-filter-btn" onclick="filterPubs('in-prep', this)">In Preparation</button>
+    <button class="pub-filter-btn" onclick="filterPubs('patent', this)">Patent</button>
+  </div>
+
+  <div class="pub-list">
 
     <div class="pub-item" data-category="in-prep">
-        <p class="pub-num">prep</p>
+      <p class="pub-num">prep</p>
+      <div>
+        <span class="pub-badge in-prep">In Preparation</span>
+        <p class="pub-title">준비 중인 논문 제목을 여기에 입력하세요</p>
+        <p class="pub-authors"><strong>H. Chang</strong>, 공저자</p>
+        <p class="pub-journal">Target journal 예정</p>
+      </div>
+    </div>
+
+    <div class="pub-item" data-category="published">
+      <p class="pub-num">[3]</p>
+      <div style="display: flex; gap: 1rem; align-items: flex-start;">
+        <img src="paper3.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
         <div>
-          <span class="pub-badge in-prep">In Preparation</span>
-          <p class="pub-title">준비 중인 논문 제목을 여기에 입력하세요</p>
-          <p class="pub-authors"><strong>H. Chang</strong>, 공저자</p>
-          <p class="pub-journal">Target journal 예정</p>
-        </div>
-      </div>
-       
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[3]</p>
-
-          <div style="display: flex; gap: 1rem; align-items: flex-start;">
-    
-    <!-- 🔥 논문 표지 이미지 -->
-        <img src="paper3.jpg" alt="paper cover" 
-         style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
-
-    <!-- 기존 텍스트 -->
-    <div>
-      <span class="pub-badge published">Published</span>
-      <p class="pub-title">Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy</p>
-      <p class="pub-authors">Juheon Lee, Yeon Wook Kim, <strong>Hwanseok Chang</strong>, Herve Hugonnet, Chulmin Oh, Sehyeon Lee, Seung-Mo Hong, Seokwoo Jeon, YongKeun Park*</p>
-      <p class="pub-journal">Nature Photonics, Online published</p>
-      <div class="pub-links">
-        <a href="#" class="pub-link">https://doi.org/10.1038/s41566-026-01897-0</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-      
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[2]</p>
-
-          <div style="display: flex; gap: 1rem; align-items: flex-start;">
-    
-    <!-- 🔥 논문 표지 이미지 -->
-        <img src="paper2.jpg" alt="paper cover" 
-         style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
-
-    <!-- 기존 텍스트 -->
-    <div>
-      <span class="pub-badge published">Published</span>
-      <p class="pub-title">Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems</p>
-      <p class="pub-authors">Jewook Kim†, <strong>Hwanseok Chang†</strong>, Gwangmin Bae, Myungwoo Choi*, Seokwoo Jeon*</p>
-      <p class="pub-journal">Chemical Communications, 61(27), 5050-5063.</p>
-      <div class="pub-links">
-        <a href="#" class="pub-link">https://doi.org/10.1039/D4CC06821A</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-      <!-- [21] ~ [1]: 아래에 실제 논문을 추가하세요 -->
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[1]</p>
-
-          <div style="display: flex; gap: 1rem; align-items: flex-start;">
-    
-    <!-- 🔥 논문 표지 이미지 -->
-        <img src="paper1.jpg" alt="paper cover" 
-         style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
-
-    <!-- 기존 텍스트 -->
-    <div>
-      <span class="pub-badge published">Published</span>
-      <p class="pub-title">Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation</p>
-      <p class="pub-authors"><strong>Hwanseok Chang†</strong>, Sungjoo Kwon†, Gwangmin Bae*, Seokwoo Jeon*</p>
-      <p class="pub-journal">Nanophotonics, 13(7), 971-982.</p>
-      <div class="pub-links">
-        <a href="#" class="pub-link">https://doi.org/10.1515/nanoph-2024-0001</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      
-
-        <div class="pub-item" data-category="patent">
-        <p class="pub-num">Patents</p>
-        <div>
-          <span class="pub-badge patent">Patent</span>
-          <p class="pub-title">포토마스크 제조방법 및 이를 기반으로 하는 자이로이드 나노구조의 제조방법</p>
-          <p class="pub-authors">신종화, 박준형, 김명준, 김나영, 전석우, 배광민, <strong>장환석</strong></p>
-          <p class="pub-journal">10-2025-0148095</p>
+          <span class="pub-badge published">Published</span>
+          <p class="pub-title">Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy</p>
+          <p class="pub-authors">Juheon Lee, Yeon Wook Kim, <strong>Hwanseok Chang</strong>, Herve Hugonnet, Chulmin Oh, Sehyeon Lee, Seung-Mo Hong, Seokwoo Jeon, YongKeun Park*</p>
+          <p class="pub-journal">Nature Photonics, Online published</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1038/s41566-026-01897-0" target="_blank" class="pub-link">DOI</a>
           </div>
         </div>
       </div>
-        <div class="pub-item" data-category="patent">
-        <p class="pub-num">Patent</p>
+    </div>
+
+    <div class="pub-item" data-category="published">
+      <p class="pub-num">[2]</p>
+      <div style="display: flex; gap: 1rem; align-items: flex-start;">
+        <img src="paper2.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
         <div>
-          <span class="pub-badge patent">Patent</span>
-          <p class="pub-title">포토마스크 제조방법 및 이를 기반으로 하는 다이아몬드 또는 장작더미 나노구조의 제조방법</p>
-          <p class="pub-authors">신종화, 박준형, 김명준, 김나영, 전석우, 배광민, <strong>장환석</strong></p>
-          <p class="pub-journal">10-2025-0148102</p>
+          <span class="pub-badge published">Published</span>
+          <p class="pub-title">Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems</p>
+          <p class="pub-authors">Jewook Kim†, <strong>Hwanseok Chang†</strong>, Gwangmin Bae, Myungwoo Choi*, Seokwoo Jeon*</p>
+          <p class="pub-journal">Chemical Communications, 61(27), 5050-5063.</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1039/D4CC06821A" target="_blank" class="pub-link">DOI</a>
           </div>
         </div>
       </div>
-
     </div>
-  </section>
+
+    <div class="pub-item" data-category="published">
+      <p class="pub-num">[1]</p>
+      <div style="display: flex; gap: 1rem; align-items: flex-start;">
+        <img src="paper1.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
+        <div>
+          <span class="pub-badge published">Published</span>
+          <p class="pub-title">Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation</p>
+          <p class="pub-authors"><strong>Hwanseok Chang†</strong>, Sungjoo Kwon†, Gwangmin Bae*, Seokwoo Jeon*</p>
+          <p class="pub-journal">Nanophotonics, 13(7), 971-982.</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1515/nanoph-2024-0001" target="_blank" class="pub-link">DOI</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-category="patent">
+      <p class="pub-num">P1</p>
+      <div>
+        <span class="pub-badge patent">Patent</span>
+        <p class="pub-title">포토마스크 제조방법 및 이를 기반으로 하는 자이로이드 나노구조의 제조방법</p>
+        <p class="pub-authors">신종화, 박준형, 김명준, 김나영, 전석우, 배광민, <strong>장환석</strong></p>
+        <p class="pub-journal">10-2025-0148095</p>
+      </div>
+    </div>
+
+    <div class="pub-item" data-category="patent">
+      <p class="pub-num">P2</p>
+      <div>
+        <span class="pub-badge patent">Patent</span>
+        <p class="pub-title">포토마스크 제조방법 및 이를 기반으로 하는 다이아몬드 또는 장작더미 나노구조의 제조방법</p>
+        <p class="pub-authors">신종화, 박준형, 김명준, 김나영, 전석우, 배광민, <strong>장환석</strong></p>
+        <p class="pub-journal">10-2025-0148102</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Career -->
   <section id="career" class="fade-in">
