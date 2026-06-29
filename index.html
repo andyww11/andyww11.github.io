@@ -80,7 +80,6 @@
   }
   .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-  /* Scholar / ORCID badges */
   .profile-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.1rem; }
   .profile-badge {
     display: inline-flex; align-items: center; gap: 0.4rem;
@@ -93,7 +92,6 @@
   .badge-orcid { color: #a6ce39; border-color: #d4edaa; background: #f4faeb; }
   .badge-orcid:hover { background: #a6ce39; color: #fff; }
 
-  /* Section headings */
   .section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent-mid); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; }
   h2 { font-family: var(--serif); font-size: 1.85rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 2rem; }
 
@@ -123,17 +121,13 @@
     cursor: pointer; transition: all 0.2s; letter-spacing: 0.04em;
   }
   .pub-filter-btn.active, .pub-filter-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
   .pub-list { display: flex; flex-direction: column; }
   .pub-item {
     padding: 1.5rem 0; border-bottom: 1px solid var(--border);
     display: grid; grid-template-columns: 52px 1fr; gap: 1.25rem; align-items: start;
   }
   .pub-item:last-child { border-bottom: none; }
-  .pub-item[data-type="hidden"] { display: none; }
-
   .pub-num { font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted); padding-top: 3px; text-align: right; }
-
   .pub-badge {
     display: inline-block; font-family: var(--mono); font-size: 0.67rem;
     padding: 0.12rem 0.5rem; border-radius: 3px; margin-bottom: 0.45rem; font-weight: 500;
@@ -141,26 +135,58 @@
   .pub-badge.published { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
   .pub-badge.in-prep { background: #fff8e1; color: #e65100; border: 1px solid #ffe082; }
   .pub-badge.patent { background: var(--accent-light); color: var(--accent); border: 1px solid #b3d1ea; }
-
   .pub-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.3rem; }
   .pub-authors { font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.25rem; line-height: 1.6; }
   .pub-authors strong { color: var(--text-primary); font-weight: 600; }
   .pub-journal { font-size: 0.84rem; color: var(--accent-mid); font-style: italic; margin-bottom: 0.5rem; }
-  .pub-metrics { font-family: var(--sans); font-size: 0.84rem; font-weight: 400; font-style: normal; line-height: 1.6; margin-bottom: 0.5rem; } .metric-red { color: #d32f2f; }
+  .pub-metrics { font-family: var(--sans); font-size: 0.84rem; font-weight: 400; font-style: normal; line-height: 1.6; margin-bottom: 0.5rem; }
+  .metric-red { color: #d32f2f; }
   .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
   .pub-link { font-size: 0.74rem; font-family: var(--mono); color: var(--accent); text-decoration: none; border: 1px solid var(--accent-light); padding: 0.15rem 0.55rem; border-radius: 3px; transition: all 0.2s; }
   .pub-link:hover { background: var(--accent); color: #fff; }
-
   .pub-stat {
     font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    padding: 0.75rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    margin-bottom: 1.5rem; padding: 0.75rem 1rem;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
     display: inline-block;
   }
   .pub-stat span { color: var(--accent); font-weight: 500; }
+
+  /* Awards */
+  .awards-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .award-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .award-card:hover { border-color: var(--accent-mid); box-shadow: 0 4px 20px rgba(42,92,143,0.08); }
+  .award-img-wrap { cursor: pointer; position: relative; }
+  .award-img-wrap img { width: 100%; border-radius: 6px; border: 1px solid var(--border); display: block; transition: transform 0.2s; }
+  .award-img-wrap:hover img { transform: scale(1.02); }
+  .award-img-caption { font-family: var(--mono); font-size: 0.63rem; color: var(--text-muted); text-align: center; margin-top: 0.35rem; }
+  .award-placeholder { width: 100%; min-height: 120px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: 6px; border: 1px dashed var(--border-strong); font-size: 2rem; opacity: 0.35; }
+  .award-year { font-family: var(--mono); font-size: 0.72rem; color: var(--accent-mid); letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+  .award-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.3rem; }
+  .award-org { font-size: 0.875rem; color: var(--accent-mid); font-weight: 500; margin-bottom: 0.5rem; }
+  .award-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65; }
+  .award-badge {
+    display: inline-block; font-family: var(--mono); font-size: 0.67rem; font-weight: 500;
+    padding: 0.12rem 0.5rem; border-radius: 3px; margin-bottom: 0.6rem;
+    background: #fff8e1; color: #b8860b; border: 1px solid #f0d060;
+  }
+
+  /* Lightbox */
+  .lightbox { display: none; position: fixed; z-index: 999; inset: 0; background: rgba(0,0,0,0.78); align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 88vw; max-height: 88vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2.2rem; color: #fff; cursor: pointer; line-height: 1; background: none; border: none; opacity: 0.8; }
+  .lightbox-close:hover { opacity: 1; }
 
   /* Timeline */
   .timeline { position: relative; padding-left: 2rem; }
@@ -197,10 +223,16 @@
     .contact-grid { grid-template-columns: 1fr; }
     .pub-item { grid-template-columns: 1fr; }
     .pub-num { display: none; }
+    .award-card { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="Award Certificate">
+</div>
 
 <nav>
   <a href="#hero" class="nav-logo">Hwanseok Chang</a>
@@ -208,8 +240,9 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#career">Career</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#career">Career</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -219,17 +252,16 @@
   <!-- Hero -->
   <section id="hero">
     <div>
-      <p class="hero-tag">Ph.D. Candidate · Korea University</p>
+      <p class="hero-tag">Ph.D. Candidate &middot; Korea University</p>
       <h1>Hwanseok Chang</h1>
-      <p class="hero-name-kr">장환석</p>
+      <p class="hero-name-kr">&#xC7A5;&#xD658;&#xC11D;</p>
       <p class="hero-desc">
         I am a Ph.D. candidate in Materials Science and Engineering at Korea University, specializing in nanophotonics and 3D nanofabrication.
-        <p>I am always open to collaboration with researchers in nanophotonics, metamaterials, and advanced manufacturing.</p>
-        <p>Please feel free to reach out if you are interested.</p>
+        I am always open to collaboration with researchers in nanophotonics, metamaterials, and advanced manufacturing.
+        Please feel free to reach out if you are interested.
       </p>
-      
       <div class="hero-links">
-        <a href="#publications" class="btn btn-primary">Publications →</a>
+        <a href="#publications" class="btn btn-primary">Publications &rarr;</a>
         <a href="#contact" class="btn btn-secondary">Contact</a>
         <a href="#" class="btn btn-secondary">CV (In preparation)</a>
       </div>
@@ -245,20 +277,18 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="hwanseok.jpg" alt="Hwanseok Chang 장환석">
+      <img src="hwanseok.jpg" alt="Hwanseok Chang">
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About // 01 -->
   <section id="about" class="fade-in">
     <p class="section-label">// 01</p>
     <h2>About</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>
-          My research centers on inverse design strategies for complex nanostructures and the realization of architected 3D photonic systems. By combining computational electromagnetics (FDTD, RCWA) with advanced fabrication techniques such as electron-beam lithography and atomic layer deposition (ALD), I develop physically consistent design frameworks that translate abstract optical functionalities into experimentally realizable nanostructures.
-        </p>
-        <p>My broader goal is to establish scalable and physically interpretable design methodologies for controlling light–matter interactions in high-dimensional photonic systems.</p>
+        <p>My research centers on inverse design strategies for complex nanostructures and the realization of architected 3D photonic systems. By combining computational electromagnetics (FDTD, RCWA) with advanced fabrication techniques such as electron-beam lithography and atomic layer deposition (ALD), I develop physically consistent design frameworks that translate abstract optical functionalities into experimentally realizable nanostructures.</p>
+        <p>My broader goal is to establish scalable and physically interpretable design methodologies for controlling light-matter interactions in high-dimensional photonic systems.</p>
       </div>
       <div class="about-interests">
         <h3>Research Interests</h3>
@@ -269,7 +299,7 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Skills // 02 -->
   <section id="skills" class="fade-in">
     <p class="section-label">// 02</p>
     <h2>Skills</h2>
@@ -309,217 +339,210 @@
     </div>
   </section>
 
-  <!-- Publications -->
-<section id="publications" class="fade-in">
-  <p class="section-label">// 03</p>
-  <h2>Publications</h2>
-
-  <div class="pub-stat">
-  Total <span>3</span> journal articles &nbsp;·&nbsp; <span>2</span> patents / 1st &amp; corresponding: <span>2</span> &nbsp;·&nbsp; Co-authored: <span>1</span>
-  <br>
-  <span style="font-size:0.68rem; color:var(--text-muted);">
-    † equal contribution / * corresponding author
-  </span>
-</div>
-
-  <div class="pub-filter">
-    <button class="pub-filter-btn active" onclick="filterPubs('all', this)">All</button>
-    <button class="pub-filter-btn" onclick="filterPubs('published', this)">Published</button>
-    <button class="pub-filter-btn" onclick="filterPubs('in-prep', this)">In Preparation</button>
-    <button class="pub-filter-btn" onclick="filterPubs('patent', this)">Patent</button>
-  </div>
-
-  <div class="pub-list">
-
-    <div class="pub-item" data-category="in-prep">
-      <p class="pub-num">prep</p>
-      <div>
-        <span class="pub-badge in-prep">In Preparation</span>
-        <p class="pub-title">Inverse design of ...</p>
-        <p class="pub-authors"><strong>H. Chang</strong>, ...</p>
-        <p class="pub-journal">Target journal : Nature</p>
-      </div>
+  <!-- Publications // 03 -->
+  <section id="publications" class="fade-in">
+    <p class="section-label">// 03</p>
+    <h2>Publications</h2>
+    <div class="pub-stat">
+      Total <span>3</span> journal articles &nbsp;&middot;&nbsp; <span>2</span> patents / 1st &amp; corresponding: <span>2</span> &nbsp;&middot;&nbsp; Co-authored: <span>1</span>
+      <br>
+      <span style="font-size:0.68rem; color:var(--text-muted);">&#x2020; equal contribution / * corresponding author</span>
     </div>
-
-     <div class="pub-item" data-category="published">
-      <p class="pub-num">[4]</p>
-      <div style="display: flex; gap: 1rem; align-items: flex-start;">
-        <img src="paper4.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
+    <div class="pub-filter">
+      <button class="pub-filter-btn active" onclick="filterPubs('all', this)">All</button>
+      <button class="pub-filter-btn" onclick="filterPubs('published', this)">Published</button>
+      <button class="pub-filter-btn" onclick="filterPubs('in-prep', this)">In Preparation</button>
+      <button class="pub-filter-btn" onclick="filterPubs('patent', this)">Patent</button>
+    </div>
+    <div class="pub-list">
+      <div class="pub-item" data-category="in-prep">
+        <p class="pub-num">prep</p>
         <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Spectrally Encoded Proximity-Field Nanopatterning</p>
-          <p class="pub-authors">Junhyung Park†, Yun Hyeong†, <strong>Hwanseok Chang</strong>, Dohyun Kim, Joonkyo Jung, Seokwoo Jeon, Jonghwa Shin*</p>
-          <p class="pub-journal">Advanced Optical Materials, e03274, (2026)</p>
-          <p class="pub-metrics metric-red">[IF=7.2, Optics, Q1 (TOP 12.0%)]</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1002/adom.202503274" target="_blank" rel="noopener noreferrer" class="pub-link">DOI</a>
+          <span class="pub-badge in-prep">In Preparation</span>
+          <p class="pub-title">Inverse design of ...</p>
+          <p class="pub-authors"><strong>H. Chang</strong>, ...</p>
+          <p class="pub-journal">Target journal : Nature</p>
+        </div>
+      </div>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[4]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper4.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Spectrally Encoded Proximity-Field Nanopatterning</p>
+            <p class="pub-authors">Junhyung Park&#x2020;, Yun Hyeong&#x2020;, <strong>Hwanseok Chang</strong>, Dohyun Kim, Joonkyo Jung, Seokwoo Jeon, Jonghwa Shin*</p>
+            <p class="pub-journal">Advanced Optical Materials, e03274, (2026)</p>
+            <p class="pub-metrics metric-red">[IF=7.2, Optics, Q1 (TOP 12.0%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1002/adom.202503274" target="_blank" class="pub-link">DOI</a></div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="pub-item" data-category="published">
-      <p class="pub-num">[3]</p>
-      <div style="display: flex; gap: 1rem; align-items: flex-start;">
-        <img src="paper3.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
-        <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy</p>
-          <p class="pub-authors">Juheon Lee, Yeon Wook Kim, <strong>Hwanseok Chang</strong>, Herve Hugonnet, Chulmin Oh, Sehyeon Lee, Seung-Mo Hong, Seokwoo Jeon, YongKeun Park*</p>
-          <p class="pub-journal">Nature Photonics, 1-10, (2026)</p>
-          <p class="pub-metrics metric-red">[IF=32.9, Physics, Applied, Q1 (TOP 0.8%)]</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1038/s41566-026-01897-0" target="_blank" class="pub-link">DOI</a>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[3]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper3.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy</p>
+            <p class="pub-authors">Juheon Lee, Yeon Wook Kim, <strong>Hwanseok Chang</strong>, Herve Hugonnet, Chulmin Oh, Sehyeon Lee, Seung-Mo Hong, Seokwoo Jeon, YongKeun Park*</p>
+            <p class="pub-journal">Nature Photonics, 1-10, (2026)</p>
+            <p class="pub-metrics metric-red">[IF=32.9, Physics, Applied, Q1 (TOP 0.8%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1038/s41566-026-01897-0" target="_blank" class="pub-link">DOI</a></div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="pub-item" data-category="published">
-      <p class="pub-num">[2]</p>
-      <div style="display: flex; gap: 1rem; align-items: flex-start;">
-        <img src="paper2.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
-        <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems</p>
-          <p class="pub-authors">Jewook Kim†, <strong>Hwanseok Chang†</strong>, Gwangmin Bae, Myungwoo Choi*, Seokwoo Jeon*</p>
-          <p class="pub-journal">Chemical Communications, 61(27), 5050-5063, (2025)</p>
-          <p class="pub-metrics metric-red">[IF=4.2, Chemistry, Multidisciplinary, Q2 (TOP 35.1%)]</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1039/D4CC06821A" target="_blank" class="pub-link">DOI</a>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[2]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper2.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems</p>
+            <p class="pub-authors">Jewook Kim&#x2020;, <strong>Hwanseok Chang&#x2020;</strong>, Gwangmin Bae, Myungwoo Choi*, Seokwoo Jeon*</p>
+            <p class="pub-journal">Chemical Communications, 61(27), 5050-5063, (2025)</p>
+            <p class="pub-metrics metric-red">[IF=4.2, Chemistry, Multidisciplinary, Q2 (TOP 35.1%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1039/D4CC06821A" target="_blank" class="pub-link">DOI</a></div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="pub-item" data-category="published">
-      <p class="pub-num">[1]</p>
-      <div style="display: flex; gap: 1rem; align-items: flex-start;">
-        <img src="paper1.jpg" alt="paper cover" style="width: 200px; border-radius: 4px; border: 2px solid #ddd;">
-        <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation</p>
-          <p class="pub-authors"><strong>Hwanseok Chang†</strong>, Sungjoo Kwon†, Gwangmin Bae*, Seokwoo Jeon*</p>
-          <p class="pub-journal">Nanophotonics, 13(7), 971-982, (2024)</p>
-          <p class="pub-metrics metric-red">[IF=6.6, Physics, Applied, Q1 (TOP 15.2%)]</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1515/nanoph-2024-0001" target="_blank" class="pub-link">DOI</a>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[1]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper1.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation</p>
+            <p class="pub-authors"><strong>Hwanseok Chang&#x2020;</strong>, Sungjoo Kwon&#x2020;, Gwangmin Bae*, Seokwoo Jeon*</p>
+            <p class="pub-journal">Nanophotonics, 13(7), 971-982, (2024)</p>
+            <p class="pub-metrics metric-red">[IF=6.6, Physics, Applied, Q1 (TOP 15.2%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1515/nanoph-2024-0001" target="_blank" class="pub-link">DOI</a></div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="pub-item" data-category="patent">
-      <p class="pub-num">P1</p>
-      <div>
-        <span class="pub-badge patent">Patent</span>
-        <p class="pub-title">포토마스크 제조방법 및 이를 기반으로 하는 자이로이드 나노구조의 제조방법</p>
-        <p class="pub-authors">신종화, 박준형, 김명준, 김나영, 전석우, 배광민, <strong>장환석</strong></p>
-        <p class="pub-journal">10-2025-0148095</p>
+      <div class="pub-item" data-category="patent">
+        <p class="pub-num">P1</p>
+        <div>
+          <span class="pub-badge patent">Patent</span>
+          <p class="pub-title">&#xD3EC;&#xD1A0;&#xB9C8;&#xC2A4;&#xD06C; &#xC81C;&#xC870;&#xBC29;&#xBC95; &#xBC0F; &#xC774;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD558;&#xB294; &#xC790;&#xC774;&#xB85C;&#xC774;&#xB4DC; &#xB098;&#xB178;&#xAD6C;&#xC870;&#xC758; &#xC81C;&#xC870;&#xBC29;&#xBC95;</p>
+          <p class="pub-authors">&#xC2E0;&#xC885;&#xD654;, &#xBC15;&#xC900;&#xD615;, &#xAE40;&#xBA85;&#xC900;, &#xAE40;&#xB098;&#xC601;, &#xC804;&#xC11D;&#xC6B0;, &#xBC30;&#xAD11;&#xBBFC;, <strong>&#xC7A5;&#xD658;&#xC11D;</strong></p>
+          <p class="pub-journal">10-2025-0148095</p>
+        </div>
+      </div>
+      <div class="pub-item" data-category="patent">
+        <p class="pub-num">P2</p>
+        <div>
+          <span class="pub-badge patent">Patent</span>
+          <p class="pub-title">&#xD3EC;&#xD1A0;&#xB9C8;&#xC2A4;&#xD06C; &#xC81C;&#xC870;&#xBC29;&#xBC95; &#xBC0F; &#xC774;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD558;&#xB294; &#xB2E4;&#xC774;&#xC544;&#xBAAC;&#xB4DC; &#xB610;&#xB294; &#xC7A5;&#xC791;&#xB354;&#xBBF8; &#xB098;&#xB178;&#xAD6C;&#xC870;&#xC758; &#xC81C;&#xC870;&#xBC29;&#xBC95;</p>
+          <p class="pub-authors">&#xC2E0;&#xC885;&#xD654;, &#xBC15;&#xC900;&#xD615;, &#xAE40;&#xBA85;&#xC900;, &#xAE40;&#xB098;&#xC601;, &#xC804;&#xC11D;&#xC6B0;, &#xBC30;&#xAD11;&#xBBFC;, <strong>&#xC7A5;&#xD658;&#xC11D;</strong></p>
+          <p class="pub-journal">10-2025-0148102</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="pub-item" data-category="patent">
-      <p class="pub-num">P2</p>
-      <div>
-        <span class="pub-badge patent">Patent</span>
-        <p class="pub-title">포토마스크 제조방법 및 이를 기반으로 하는 다이아몬드 또는 장작더미 나노구조의 제조방법</p>
-        <p class="pub-authors">신종화, 박준형, 김명준, 김나영, 전석우, 배광민, <strong>장환석</strong></p>
-        <p class="pub-journal">10-2025-0148102</p>
+  <!-- Awards & Honors // 04 -->
+  <section id="awards" class="fade-in">
+    <p class="section-label">// 04</p>
+    <h2>Awards &amp; Honors</h2>
+    <div class="awards-list">
+
+      <div class="award-card">
+        <div class="award-img-wrap" onclick="openLightbox('Award1.jpg')">
+          <img src="Award1.jpg" alt="KOCERA Award Certificate">
+          <p class="award-img-caption">Click to enlarge</p>
+        </div>
+        <div>
+          <span class="award-badge">&#x1F3C6; Award</span>
+          <p class="award-year">October 15, 2025 &nbsp;&middot;&nbsp; No. 2025-005</p>
+          <p class="award-title">KOCERA Award (&#xD55C;&#xAD6D;&#xC138;&#xB77C;&#xBBF9;&#xC5F0;&#xD569;&#xD68C;&#xC7A5;&#xC0C1;)</p>
+          <p class="award-org">&#xD55C;&#xAD6D;&#xC138;&#xB77C;&#xBBF9;&#xC5F0;&#xD569;&#xD68C; (Korean Ceramic Society Federation) &middot; President Lee Jong-keun</p>
+          <p class="award-desc">Recognized as a key talent in future ceramic technology for diligent academic engagement in the field of ceramics and outstanding research achievements. Awarded during Ph.D. candidacy at Korea University.</p>
+        </div>
       </div>
+
+      <div class="award-card">
+        <div class="award-img-wrap" onclick="openLightbox('Award2.jpg')">
+          <img src="Award2.jpg" alt="Outstanding Achievement Award">
+          <p class="award-img-caption">Click to enlarge</p>
+        </div>
+        <div>
+          <span class="award-badge">&#x1F3C5; Award</span>
+          <p class="award-year">February 2023</p>
+          <p class="award-title">Outstanding Achievement Award &amp; Excellence Award</p>
+          <p class="award-org">Korea University, Department of Materials Science &amp; Engineering</p>
+          <p class="award-desc">Awarded during undergraduate studies for outstanding academic performance and research achievement in the Department of Materials Science and Engineering.</p>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="award-img-wrap" onclick="openLightbox('Award3.jpg')">
+          <img src="Award3.jpg" alt="Minister of Science and ICT Award">
+          <p class="award-img-caption">Click to enlarge</p>
+        </div>
+        <div>
+          <span class="award-badge">&#x1F947; Award</span>
+          <p class="award-year">2017</p>
+          <p class="award-title">Minister of Science and ICT Award</p>
+          <p class="award-org">National Science Exhibition (&#xC804;&#xAD6D;&#xACFC;&#xD559;&#xC804;&#xB78C;&#xD68C;)</p>
+          <p class="award-desc">Received the Minister of Science and ICT Award at the National Science Exhibition while attending Hansung Science High School.</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-<!-- Awards & Honors -->
-<section id="awards" class="fade-in">
-  <p class="section-label">// 04</p>
-  <h2>Awards &amp; Honors</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-dot current"></div>
-      <p class="timeline-period">2026</p>
-      <p class="timeline-role">Award or Scholarship Name</p>
-      <p class="timeline-org">Awarding Institution</p>
-      <p class="timeline-detail">
-        Brief description of the award or selection.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-period">2023</p>
-      <p class="timeline-role">Outstanding Achievement Award</p>
-      <p class="timeline-org">Korea University</p>
-      <p class="timeline-detail">
-        Awarded in recognition of outstanding academic achievement.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-period">2017</p>
-      <p class="timeline-role">Minister of Science and ICT Award</p>
-      <p class="timeline-org">National Science Exhibition</p>
-      <p class="timeline-detail">
-        Recognized for outstanding achievement in scientific research.
-      </p>
-    </div>
-
-  </div>
-</section>
-  <!-- Education -->
+  <!-- Education // 05 -->
   <section id="education" class="fade-in">
     <p class="section-label">// 05</p>
     <h2>Education</h2>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <p class="timeline-period">2025.03 — Current</p>
+        <p class="timeline-period">2025.03 &mdash; Current</p>
         <p class="timeline-role">Ph.D. in Materials Science &amp; Engineering</p>
         <p class="timeline-org">Korea University, Seoul</p>
         <p class="timeline-detail">Thesis : Inverse design of ....</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-period">2023.03 — 2025.02</p>
+        <p class="timeline-period">2023.03 &mdash; 2025.02</p>
         <p class="timeline-role">M.S. in Materials Science &amp; Engineering</p>
         <p class="timeline-org">Korea University, Seoul</p>
         <p class="timeline-detail">Thesis : Inch-scale fabrication of 3D thin-shell alumina with woodpile structure and their application in lightweight and high-strength structural material</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-period">2017.03 — 2023.02</p>
+        <p class="timeline-period">2017.03 &mdash; 2023.02</p>
         <p class="timeline-role">B.S. in Materials Science &amp; Engineering</p>
         <p class="timeline-org">Korea University, Seoul</p>
         <p class="timeline-detail">Awarded the Outstanding Achievement Award and the Excellence Award</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-period">2014.03 — 2017.02</p>
+        <p class="timeline-period">2014.03 &mdash; 2017.02</p>
         <p class="timeline-role">High School Diploma</p>
         <p class="timeline-org">Hansung Science High School, Seoul</p>
         <p class="timeline-detail">Minister of Science and ICT Award, National Science Exhibition</p>
       </div>
     </div>
   </section>
-   <!-- Career -->
+
+  <!-- Career // 06 -->
   <section id="career" class="fade-in">
-    <p class="section-label">// 04</p>
+    <p class="section-label">// 06</p>
     <h2>Career</h2>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-dot current"></div>
-        <p class="timeline-period">2025.03 — 현재</p>
+        <p class="timeline-period">2025.03 &mdash; Present</p>
         <p class="timeline-role">Ph.D. Candidate</p>
-        <p class="timeline-org">Department of Materials Science and Engineering, Korea university, Seoul</p>
+        <p class="timeline-org">Department of Materials Science and Engineering, Korea University, Seoul</p>
         <p class="timeline-detail">Nanomaterials for Electronics and Optics Lab.</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-period">2022.09 — 2022.12</p>
+        <p class="timeline-period">2022.09 &mdash; 2022.12</p>
         <p class="timeline-role">Research Intern</p>
         <p class="timeline-org">Electronic Materials Research Center, KIST, Seoul</p>
         <p class="timeline-detail">Electronic Thin Films Lab.</p>
@@ -527,64 +550,34 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact // 07 -->
   <section id="contact" class="fade-in">
-    <p class="section-label">// 06</p>
+    <p class="section-label">// 07</p>
     <h2>Contact</h2>
     <div class="contact-grid">
       <a href="mailto:andyww11@korea.ac.kr" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">Email</p>
-          <p class="contact-value">andyww11@korea.ac.kr</p>
-        </div>
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div><p class="contact-label">Email</p><p class="contact-value">andyww11@korea.ac.kr</p></div>
       </a>
       <a href="tel:01022475774" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">Phone</p>
-          <p class="contact-value">010-2247-5774</p>
-        </div>
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+        <div><p class="contact-label">Phone</p><p class="contact-value">010-2247-5774</p></div>
       </a>
       <a href="https://scholar.google.com/citations?user=DQbIvvYAAAAJ&hl=ko" target="_blank" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">Google Scholar</p>
-          <p class="contact-value">Hwanseok Chang</p>
-        </div>
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg></div>
+        <div><p class="contact-label">Google Scholar</p><p class="contact-value">Hwanseok Chang</p></div>
       </a>
       <a href="https://orcid.org/0009-0003-8513-5261" target="_blank" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.42.947.947s-.422.947-.947.947a.947.947 0 0 1 0-1.894zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.9-2.297 3.9-3.722 0-2.016-1.284-3.722-3.9-3.722h-2.297z"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">ORCID</p>
-          <p class="contact-value">0009-0003-8513-5261</p>
-        </div>
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.42.947.947s-.422.947-.947.947a.947.947 0 0 1 0-1.894zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.9-2.297 3.9-3.722 0-2.016-1.284-3.722-3.9-3.722h-2.297z"/></svg></div>
+        <div><p class="contact-label">ORCID</p><p class="contact-value">0009-0003-8513-5261</p></div>
       </a>
       <a href="https://github.com/andyww11" target="_blank" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">GitHub</p>
-          <p class="contact-value">github.com/andyww11</p>
-        </div>
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
+        <div><p class="contact-label">GitHub</p><p class="contact-value">github.com/andyww11</p></div>
       </a>
       <a href="https://andyww11.github.io/" target="_blank" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        </div>
-        <div>
-          <p class="contact-label">Homepage</p>
-          <p class="contact-value">andyww11.github.io</p>
-        </div>
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+        <div><p class="contact-label">Homepage</p><p class="contact-value">andyww11.github.io</p></div>
       </a>
     </div>
   </section>
@@ -592,7 +585,7 @@
 </div>
 
 <footer>
-  © 2026 Hwanseok Chang (장환석) · Ph.D. Candidate · Korea University · Materials Science &amp; Engineering
+  &copy; 2026 Hwanseok Chang (&#xC7A5;&#xD658;&#xC11D;) &middot; Ph.D. Candidate &middot; Korea University &middot; Materials Science &amp; Engineering
 </footer>
 
 <script>
@@ -605,13 +598,22 @@
     document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.pub-item').forEach(item => {
-      if (type === 'all' || item.dataset.category === type) {
-        item.style.display = 'grid';
-      } else {
-        item.style.display = 'none';
-      }
+      item.style.display = (type === 'all' || item.dataset.category === type) ? 'grid' : 'none';
     });
   }
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
