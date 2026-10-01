@@ -38,14 +38,12 @@
     display: flex; align-items: center; justify-content: space-between;
   }
   .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--text-primary); text-decoration: none; }
-  .nav-links { display: flex; gap: 1.25rem; list-style: none; min-width: 0; overflow-x: auto; }
-  .nav-links a, .nav-logo { white-space: nowrap; }
-  nav { gap: 2rem; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; }
   .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
 
   .page-wrapper { max-width: 880px; margin: 0 auto; padding: 0 2rem; }
-  section { padding: 80px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 56px; }
+  section { padding: 80px 0; border-bottom: 1px solid var(--border); }
   section:last-of-type { border-bottom: none; }
 
   /* Hero */
@@ -134,7 +132,7 @@
     display: inline-block; font-family: var(--mono); font-size: 0.67rem;
     padding: 0.12rem 0.5rem; border-radius: 3px; margin-bottom: 0.45rem; font-weight: 500;
   }
-  .pub-badge.published, .pub-badge.accepted { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+  .pub-badge.published { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
   .pub-badge.in-prep { background: #fff8e1; color: #e65100; border: 1px solid #ffe082; }
   .pub-badge.patent { background: var(--accent-light); color: var(--accent); border: 1px solid #b3d1ea; }
   .pub-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.3rem; }
@@ -203,10 +201,6 @@
   .timeline-detail { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
   .award-desc a, .timeline-detail a { color: var(--accent); text-underline-offset: 3px; }
 
-  .upcoming-note { margin-top: 2rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
-  .award-card-text { grid-template-columns: 1fr; }
-  .pub-item[hidden] { display: none; }
-
   /* Contact */
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .contact-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; transition: all 0.2s; }
@@ -224,15 +218,6 @@
   img {
   max-width: 100%;
   height: auto;
-  }
-
-  @media (min-width: 769px) and (max-width: 1100px) {
-    nav { height: auto; min-height: 56px; padding: 0.75rem 2rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-    .nav-links { width: 100%; padding-bottom: 0.25rem; }
-    #hero { padding-top: 150px; }
-  }
-  @media (max-width: 1100px) {
-    section { scroll-margin-top: 110px; }
   }
 
   @media (max-width: 768px) {
@@ -460,14 +445,12 @@
 <nav>
   <a href="#hero" class="nav-logo">Hwanseok Chang</a>
   <ul class="nav-links">
-    <li><a href="#about">Profile</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#career">Experience</a></li>
-    <li><a href="#awards">Honors</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#patents">Patents</a></li>
-    <li><a href="#interests">Interests</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#career">Career</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -488,7 +471,7 @@
       <div class="hero-links">
         <a href="#publications" class="btn btn-primary">Publications &rarr;</a>
         <a href="#contact" class="btn btn-secondary">Contact</a>
-        <a href="Hwanseok_Chang_CV_2026.10.01.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Open Hwanseok Chang’s CV, updated October 1, 2026 (PDF)">CV (PDF)</a>
+        <a href="Hwanseok_Chang_CV_2026.10.01.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
       </div>
       <div class="profile-badges">
         <a href="https://scholar.google.com/citations?user=DQbIvvYAAAAJ&hl=ko" target="_blank" class="profile-badge badge-scholar">
@@ -506,116 +489,202 @@
     </div>
   </section>
 
-  <!-- Research Profile // 01 -->
+  <!-- About // 01 -->
   <section id="about" class="fade-in">
     <p class="section-label">// 01</p>
-    <h2>Research Profile</h2>
-    <div class="about-text">
-      <p>My research focuses on inverse design and scalable manufacturing of functional 3D nanoarchitectures. I develop algorithms that determine optical fields and photomask geometries for large-area fabrication of prescribed structures, and extend this framework toward performance-driven discovery of architectures for sensing, structural, thermoelectric, photonic, and other metamaterial functions. Experimentally, I fabricate 3D polymer templates and convert them into ceramic shells, metals, and glassy carbon while preserving complex geometry. By integrating inverse design, scalable nanofabrication, material conversion, and AI-assisted optimization, I aim to create architected metamaterials that overcome intrinsic material limitations through structure.</p>
+    <h2>About</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>My research centers on inverse design strategies for complex nanostructures and the realization of architected 3D photonic systems. By combining computational electromagnetics (FDTD, RCWA) with advanced fabrication techniques such as electron-beam lithography and atomic layer deposition (ALD), I develop physically consistent design frameworks that translate abstract optical functionalities into experimentally realizable nanostructures.</p>
+        <p>My broader goal is to establish scalable and physically interpretable design methodologies for controlling light-matter interactions in high-dimensional photonic systems.</p>
+      </div>
+      <div class="about-interests">
+        <h3>Research Interests</h3>
+        <div class="interest-item"><div class="interest-dot"></div><span>Inverse design of nanofabrication</span></div>
+        <div class="interest-item"><div class="interest-dot"></div><span>Metamaterials</span></div>
+        <div class="interest-item"><div class="interest-dot"></div><span>Applications of 3D nanoarchitecture</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- Education // 02 -->
-  <section id="education" class="fade-in">
+  <!-- Skills // 02 -->
+  <section id="skills" class="fade-in">
     <p class="section-label">// 02</p>
-    <h2>Education</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot current"></div>
-        <p class="timeline-period">2025.03 – Present</p>
-        <p class="timeline-role">Ph.D. in Materials Science &amp; Engineering</p>
-        <p class="timeline-org">Korea University, Seoul</p>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-category">Simulation &amp; Programming</p>
+        <div class="skill-tags">
+          <span class="skill-tag">FDTD (Lumerical)</span>
+          <span class="skill-tag">RCWA (Lumerical)</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">MATLAB</span>
+        </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2023.03 – 2025.02</p>
-        <p class="timeline-role">M.S. in Materials Science &amp; Engineering</p>
-        <p class="timeline-org">Korea University, Seoul</p>
-        <p class="timeline-detail">Thesis: Inch-scale fabrication of 3D thin-shell alumina with woodpile structure and their application in lightweight and high-strength structural material</p>
+      <div class="skill-card">
+        <p class="skill-category">Nanofabrication</p>
+        <div class="skill-tags">
+          <span class="skill-tag">E-beam Lithography</span>
+          <span class="skill-tag">3D Lithography</span>
+          <span class="skill-tag">Mask Aligner</span>
+          <span class="skill-tag">ALD</span>
+          <span class="skill-tag">E-beam Evaporator</span>
+          <span class="skill-tag">FIB</span>
+          <span class="skill-tag">Ellipsometer</span>
+        </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2017.03 – 2023.02</p>
-        <p class="timeline-role">B.S. in Materials Science &amp; Engineering</p>
-        <p class="timeline-org">Korea University, Seoul</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2014.03 – 2017.02</p>
-        <p class="timeline-role">High School Diploma</p>
-        <p class="timeline-org">Hansung Science High School, Seoul</p>
+      <div class="skill-card">
+        <p class="skill-category">Material Characterization</p>
+        <div class="skill-tags">
+          <span class="skill-tag">SEM</span>
+          <span class="skill-tag">TEM</span>
+          <span class="skill-tag">XRD</span>
+          <span class="skill-tag">XPS</span>
+          <span class="skill-tag">Raman</span>
+          <span class="skill-tag">GIWAXS</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience & Activities // 03 -->
-  <section id="career" class="fade-in">
+  <!-- Publications // 03 -->
+  <section id="publications" class="fade-in">
     <p class="section-label">// 03</p>
-    <h2>Experience &amp; Activities</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot current"></div>
-        <p class="timeline-period">2025.03 – Present</p>
-        <p class="timeline-role">Ph.D. Candidate</p>
-        <p class="timeline-org">Nanomaterials for Electronics and Optics Lab., Korea University</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2025.01 – 2025.12</p>
-        <p class="timeline-role">Lab Manager</p>
-        <p class="timeline-org">Nanomaterials for Electronics and Optics Lab. (NEOLab), Korea University</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2023.03 – 2025.04</p>
-        <p class="timeline-role">Research Staff</p>
-        <p class="timeline-org">MISODI Project, Korea University</p>
-        <p class="timeline-detail">Development and application of optimal 3D nano-modular materials by Fourier inverse design</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2022.09 – 2022.12</p>
-        <p class="timeline-role">Research Intern</p>
-        <p class="timeline-org">Electronic Thin Films Lab., Korea Institute of Science and Technology (KIST)</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2025.04</p>
-        <p class="timeline-role">Poster Presenter</p>
-        <p class="timeline-org">2025 Spring Meeting of the Korean Ceramic Society</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2024.10</p>
-        <p class="timeline-role">Poster Presenter</p>
-        <p class="timeline-org">2024 Fall Meeting of the Korean Ceramic Society</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2024.07</p>
-        <p class="timeline-role">Staff</p>
-        <p class="timeline-org">2024 BrainLink X-Lab Day</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-period">2023.10 – 11</p>
-        <p class="timeline-role">Poster Presenter</p>
-        <p class="timeline-org">13th A3 Symposium on Emerging Materials</p>
-      </div>
+    <h2>Publications</h2>
+    <div class="pub-stat">
+      Published <span>4</span> journal articles &nbsp;&middot;&nbsp; In preparation: <span>4</span> manuscripts &nbsp;&middot;&nbsp; <span>2</span> patents
+      <br>
+      1st &amp; corresponding: <span>5</span> &nbsp;&middot;&nbsp; Co-authored: <span>3</span>
+      <br>
+      <span style="font-size:0.68rem; color:var(--text-muted);">&#x2020; equal contribution / * corresponding author</span>
     </div>
-    <div class="upcoming-note">
-      <p class="skill-category">Upcoming</p>
-      <p class="timeline-period">2027.01 — 2027.05 (Tentative)</p>
-      <p class="timeline-role">Planned Research Visit</p>
-      <p class="timeline-org">University of Illinois Urbana-Champaign, USA</p>
-      <p class="timeline-detail">Host: <a href="https://matse.illinois.edu/people/profile/pbraun" target="_blank" rel="noopener noreferrer">Prof. Paul V. Braun</a>, Department of Materials Science and Engineering.</p>
+    <div class="pub-filter">
+      <button class="pub-filter-btn active" onclick="filterPubs('all', this)">All</button>
+      <button class="pub-filter-btn" onclick="filterPubs('published', this)">Published</button>
+      <button class="pub-filter-btn" onclick="filterPubs('in-prep', this)">In Preparation</button>
+      <button class="pub-filter-btn" onclick="filterPubs('patent', this)">Patent</button>
+    </div>
+    <div class="pub-list">
+      <div class="pub-item" data-category="in-prep">
+        <p class="pub-num">prep.4</p>
+        <div>
+          <span class="pub-badge in-prep">In Preparation</span>
+          <p class="pub-title">Programmable volumetric ...</p>
+          <p class="pub-authors">Junhyung Park†, <strong>Hwanseok Chang†</strong>, Myungjoon Kim, Nayoung Kim, Gwangmin Bae, Kumho Kongdae, Jonghwa Shin*, Seokwoo Jeon*</p>
+          <p class="pub-journal">Target journal : Nature</p>
+        </div>
+      </div>
+
+      <div class="pub-item" data-category="in-prep">
+        <p class="pub-num">prep.3</p>
+        <div>
+          <span class="pub-badge in-prep">In Preparation</span>
+          <p class="pub-title">Scalable Fabrication of Triply Periodic Minimal Surface...</p>
+          <p class="pub-authors">Gwangmin Bae†, <strong>Hwanseok Chang†</strong>, Jihoon Jeong†, Tae Hee Lee, Samuel Hwang, Jung-Wuk Hong*, Dongchan Jang*, and Seokwoo Jeon*</p>
+          <p class="pub-journal">Target journal : Nature Materials</p>
+        </div>
+      </div>
+
+      <div class="pub-item" data-category="in-prep">
+        <p class="pub-num">prep.2</p>
+        <div>
+          <span class="pub-badge in-prep">Accepted</span>
+          <p class="pub-title">Photoactivated Chemical Sensing Payload for Drone-Enabled Remote Environmental Monitoring</p>
+          <p class="pub-authors">Gye Hyeon Lee†, Youngoh Kim†, Junhwa Oh†, Yun-Haeng Cho†, Sunwoo Lee, Jewook Kim, Minhyeok An, Dong Gyun Hong, <strong>Hwanseok Chang</strong>, Seung Yol Jeong, Matthew T. Flavin, Jeong-O Lee, JungHoon Lee, Jun Min Suh, Seokwoo Jeon, Young-Seok Shim*, Seyong Oh*, Myungwoo Choi*, and Donghwi Cho*</p>
+          <p class="pub-journal">Nature Communications</p>
+        </div>
+      </div>
+
+      <div class="pub-item" data-category="in-prep">
+        <p class="pub-num">prep.1</p>
+        <div>
+          <span class="pub-badge in-prep">Accepted</span>
+          <p class="pub-title">Activation-Free Gas Sensing via Physisorption-Engineered 3D van der Waals Nanoarchitectures</p>
+          <p class="pub-authors"><strong>Hwanseok Chang†</strong>, Sunwoo Lee†, Youngkwon Kim†, Yea-Lee Lee, Yun-Gyu Lee, Jae Hun Hwang, Gyu-Li Kim, Gye Hyeon Lee, Dong Gyun Hong, Seung Yol Jeong, Yongseong Kim, Hak-Young Ahn, Seonggwang Yoo, Young-Seok Shim, Jung-Hoon Lee, Taeyong Eom, Jeong-O Lee, Seokwoo Jeon, Kwangjae Lee*, Myungwoo Choi*, and Donghwi Cho*</p>
+          <p class="pub-journal">Nature Communications</p>
+        </div>
+      </div>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[4]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper4.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Spectrally Encoded Proximity-Field Nanopatterning</p>
+            <p class="pub-authors">Junhyung Park&#x2020;, Yun Hyeong&#x2020;, <strong>Hwanseok Chang</strong>, Dohyun Kim, Joonkyo Jung, Seokwoo Jeon, Jonghwa Shin*</p>
+            <p class="pub-journal">Advanced Optical Materials, e03274, (2026)</p>
+            <p class="pub-metrics metric-red">[IF=7.2, Optics, Q1 (TOP 12.0%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1002/adom.202503274" target="_blank" class="pub-link">DOI</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[3]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper3.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy</p>
+            <p class="pub-authors">Juheon Lee, Yeon Wook Kim, <strong>Hwanseok Chang</strong>, Herve Hugonnet, Chulmin Oh, Sehyeon Lee, Seung-Mo Hong, Seokwoo Jeon, YongKeun Park*</p>
+            <p class="pub-journal">Nature Photonics, 1-10, (2026)</p>
+            <p class="pub-metrics metric-red">[IF=32.9, Physics, Applied, Q1 (TOP 0.8%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1038/s41566-026-01897-0" target="_blank" class="pub-link">DOI</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[2]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper2.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems</p>
+            <p class="pub-authors">Jewook Kim&#x2020;, <strong>Hwanseok Chang&#x2020;</strong>, Gwangmin Bae, Myungwoo Choi*, Seokwoo Jeon*</p>
+            <p class="pub-journal">Chemical Communications, 61(27), 5050-5063, (2025)</p>
+            <p class="pub-metrics metric-red">[IF=4.2, Chemistry, Multidisciplinary, Q2 (TOP 35.1%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1039/D4CC06821A" target="_blank" class="pub-link">DOI</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item" data-category="published">
+        <p class="pub-num">[1]</p>
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <img src="paper1.jpg" alt="paper cover" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
+          <div>
+            <span class="pub-badge published">Published</span>
+            <p class="pub-title">Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation</p>
+            <p class="pub-authors"><strong>Hwanseok Chang&#x2020;</strong>, Sungjoo Kwon&#x2020;, Gwangmin Bae*, Seokwoo Jeon*</p>
+            <p class="pub-journal">Nanophotonics, 13(7), 971-982, (2024)</p>
+            <p class="pub-metrics metric-red">[IF=6.6, Physics, Applied, Q1 (TOP 15.2%)]</p>
+            <div class="pub-links"><a href="https://doi.org/10.1515/nanoph-2024-0001" target="_blank" class="pub-link">DOI</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item" data-category="patent">
+        <p class="pub-num">P1</p>
+        <div>
+          <span class="pub-badge patent">Patent</span>
+          <p class="pub-title">&#xD3EC;&#xD1A0;&#xB9C8;&#xC2A4;&#xD06C; &#xC81C;&#xC870;&#xBC29;&#xBC95; &#xBC0F; &#xC774;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD558;&#xB294; &#xC790;&#xC774;&#xB85C;&#xC774;&#xB4DC; &#xB098;&#xB178;&#xAD6C;&#xC870;&#xC758; &#xC81C;&#xC870;&#xBC29;&#xBC95;</p>
+          <p class="pub-authors">&#xC2E0;&#xC885;&#xD654;, &#xBC15;&#xC900;&#xD615;, &#xAE40;&#xBA85;&#xC900;, &#xAE40;&#xB098;&#xC601;, &#xC804;&#xC11D;&#xC6B0;, &#xBC30;&#xAD11;&#xBBFC;, <strong>&#xC7A5;&#xD658;&#xC11D;</strong></p>
+          <p class="pub-journal">10-2025-0148095</p>
+        </div>
+      </div>
+      <div class="pub-item" data-category="patent">
+        <p class="pub-num">P2</p>
+        <div>
+          <span class="pub-badge patent">Patent</span>
+          <p class="pub-title">&#xD3EC;&#xD1A0;&#xB9C8;&#xC2A4;&#xD06C; &#xC81C;&#xC870;&#xBC29;&#xBC95; &#xBC0F; &#xC774;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD558;&#xB294; &#xB2E4;&#xC774;&#xC544;&#xBAAC;&#xB4DC; &#xB610;&#xB294; &#xC7A5;&#xC791;&#xB354;&#xBBF8; &#xB098;&#xB178;&#xAD6C;&#xC870;&#xC758; &#xC81C;&#xC870;&#xBC29;&#xBC95;</p>
+          <p class="pub-authors">&#xC2E0;&#xC885;&#xD654;, &#xBC15;&#xC900;&#xD615;, &#xAE40;&#xBA85;&#xC900;, &#xAE40;&#xB098;&#xC601;, &#xC804;&#xC11D;&#xC6B0;, &#xBC30;&#xAD11;&#xBBFC;, <strong>&#xC7A5;&#xD658;&#xC11D;</strong></p>
+          <p class="pub-journal">10-2025-0148102</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Honors & Scholarships // 04 -->
+  <!-- Awards & Honors // 04 -->
   <section id="awards" class="fade-in">
     <p class="section-label">// 04</p>
-    <h2>Honors &amp; Scholarships</h2>
+    <h2>Awards &amp; Honors</h2>
     <div class="awards-list">
 
       <div class="award-card">
@@ -633,7 +702,7 @@
         <div class="award-placeholder">&#x1F393;</div>
         <div>
           <span class="award-badge">&#x1F393; Scholarship</span>
-          <p class="award-year">2026</p>
+          <p class="award-year">선정일자 및 공문번호 추후 업데이트</p>
           <p class="award-title">박사우수장학금 (이공계)</p>
           <p class="award-org">한국장학재단</p>
         </div>
@@ -681,264 +750,77 @@
         </div>
       </div>
 
-
-      <div class="award-card award-card-text">
-        <div>
-          <span class="award-badge">&#x1F3C6; Award</span>
-          <p class="award-year">2021.2</p>
-          <p class="award-title">Top Student of the Semester</p>
-          <p class="award-org">Korea University</p>
-        </div>
-      </div>
-
-      <div class="award-card award-card-text">
-        <div>
-          <span class="award-badge">&#x1F3C6; Award</span>
-          <p class="award-year">2021.1</p>
-          <p class="award-title">Outstanding Student of the Semester</p>
-          <p class="award-org">Korea University</p>
-        </div>
-      </div>
-
-      <div class="award-card award-card-text">
-        <div>
-          <span class="award-badge">&#x1F3C6; Award</span>
-          <p class="award-year">2017.2</p>
-          <p class="award-title">Outstanding Student of the Semester</p>
-          <p class="award-org">Korea University</p>
-        </div>
-      </div>
-
-      <div class="award-card award-card-text">
-        <div>
-          <span class="award-badge">&#x1F3C6; Award</span>
-          <p class="award-year">2016</p>
-          <p class="award-title">Ministerial Award</p>
-          <p class="award-org">National Science Exhibition</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Publications // 05 -->
-  <section id="publications" class="fade-in">
+  <!-- Education // 05 -->
+  <section id="education" class="fade-in">
     <p class="section-label">// 05</p>
-    <h2>Publications</h2>
-    <div class="pub-stat">
-      Published / accepted: <span>6</span> journal articles &nbsp;&middot;&nbsp; In preparation: <span>2</span> manuscripts
-      <br>
-      Published / accepted: <span>3</span> first/co-first-author + <span>3</span> co-authored
-      <br>
-      In preparation: <span>2</span> first/co-first-author manuscripts
-      <br>
-      <span style="font-size:0.68rem; color:var(--text-muted);">&#x2020; equal contribution / * corresponding author</span>
-    </div>
-    <div class="pub-filter" aria-label="Filter publications">
-      <button class="pub-filter-btn active" aria-pressed="true" onclick="filterPubs('all', this)">All</button>
-      <button class="pub-filter-btn" aria-pressed="false" onclick="filterPubs('published', this)">Published / Accepted</button>
-      <button class="pub-filter-btn" aria-pressed="false" onclick="filterPubs('in-prep', this)">In Preparation</button>
-    </div>
-    <div class="pub-list">
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[1]</p>
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <img src="paper1.jpg" alt="Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation — paper figure" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
-          <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Rational design of arbitrary topology in three-dimensional space via inverse calculation of phase modulation</p>
-          <p class="pub-authors"><strong>Hwanseok Chang†</strong>, Sungjoo Kwon†, Gwangmin Bae*, and Seokwoo Jeon*</p>
-          <p class="pub-journal">Nanophotonics, 13(7), 971–982 (2024)</p>
-          <p class="pub-metrics metric-red">[IF=6.6, Physics, Applied, Q1 (TOP 15.2%)]</p>
-          <div class="pub-links"><a href="https://doi.org/10.1515/nanoph-2024-0001" target="_blank" rel="noopener noreferrer" class="pub-link">DOI</a></div>
-          </div>
-        </div>
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot current"></div>
+        <p class="timeline-period">2025.03 &mdash; Current</p>
+        <p class="timeline-role">Ph.D. in Materials Science &amp; Engineering</p>
+        <p class="timeline-org">Korea University, Seoul</p>
+        <p class="timeline-detail">Thesis : Inverse design of ....</p>
       </div>
-
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[2]</p>
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <img src="paper2.jpg" alt="Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems — paper figure" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
-          <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Graphene-based thermoelectric materials: toward sustainable energy-harvesting systems</p>
-          <p class="pub-authors">Jewook Kim†, <strong>Hwanseok Chang†</strong>, Gwangmin Bae, Myungwoo Choi*, and Seokwoo Jeon*</p>
-          <p class="pub-journal">Chemical Communications, 61(27), 5050–5063 (2025)</p>
-          <p class="pub-metrics metric-red">[IF=4.2, Chemistry, Multidisciplinary, Q2 (TOP 35.1%)]</p>
-          <div class="pub-links"><a href="https://doi.org/10.1039/D4CC06821A" target="_blank" rel="noopener noreferrer" class="pub-link">DOI</a></div>
-          </div>
-        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2023.03 &mdash; 2025.02</p>
+        <p class="timeline-role">M.S. in Materials Science &amp; Engineering</p>
+        <p class="timeline-org">Korea University, Seoul</p>
+        <p class="timeline-detail">Thesis : Inch-scale fabrication of 3D thin-shell alumina with woodpile structure and their application in lightweight and high-strength structural material</p>
       </div>
-
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[3]</p>
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <img src="paper4.jpg" alt="Spectrally Encoded Proximity-Field Nanopatterning — paper figure" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
-          <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Spectrally Encoded Proximity-Field Nanopatterning</p>
-          <p class="pub-authors">Junhyung Park†, Yun Hyeong†, <strong>Hwanseok Chang</strong>, Dohyun Kim, Joonkyo Jung, Seokwoo Jeon, and Jonghwa Shin*</p>
-          <p class="pub-journal">Advanced Optical Materials, e03274 (2026)</p>
-          <p class="pub-metrics metric-red">[IF=7.2, Optics, Q1 (TOP 12.0%)]</p>
-          <div class="pub-links"><a href="https://doi.org/10.1002/adom.202503274" target="_blank" rel="noopener noreferrer" class="pub-link">DOI</a></div>
-          </div>
-        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2017.03 &mdash; 2023.02</p>
+        <p class="timeline-role">B.S. in Materials Science &amp; Engineering</p>
+        <p class="timeline-org">Korea University, Seoul</p>
+        <p class="timeline-detail">Awarded the Outstanding Achievement Award and the Excellence Award</p>
       </div>
-
-      <div class="pub-item" data-category="published">
-        <p class="pub-num">[4]</p>
-        <div style="display:flex;gap:1rem;align-items:flex-start;">
-          <img src="paper3.jpg" alt="Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy — paper figure" style="width:200px;border-radius:4px;border:2px solid #ddd;flex-shrink:0;">
-          <div>
-          <span class="pub-badge published">Published</span>
-          <p class="pub-title">Incoherent dielectric tensor tomography for quantitative three-dimensional measurement of biaxial anisotropy</p>
-          <p class="pub-authors">Juheon Lee, Yeon Wook Kim, <strong>Hwanseok Chang</strong>, Herve Hugonnet, Chulmin Oh, Sehyeon Lee, Seung-Mo Hong, Seokwoo Jeon, and YongKeun Park*</p>
-          <p class="pub-journal">Nature Photonics, 1–10 (2026)</p>
-          <p class="pub-metrics metric-red">[IF=32.9, Physics, Applied, Q1 (TOP 0.8%)]</p>
-          <div class="pub-links"><a href="https://doi.org/10.1038/s41566-026-01897-0" target="_blank" rel="noopener noreferrer" class="pub-link">DOI</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-item" data-category="accepted">
-        <p class="pub-num">[5]</p>
-        <div>
-          <span class="pub-badge accepted">Accepted</span>
-          <p class="pub-title">Photoactivated Chemical Sensing Payload for Drone-Enabled Remote Environmental Monitoring</p>
-          <p class="pub-authors">Gye Hyeon Lee†, Youngoh Kim†, Junhwa Oh†, Yun-Haeng Cho†, Sunwoo Lee, Jewook Kim, Minhyeok An, Dong Gyun Hong, <strong>Hwanseok Chang</strong>, Seung Yol Jeong, Matthew T. Flavin, Jeong-O Lee, JungHoon Lee, Jun Min Suh, Seokwoo Jeon, Young-Seok Shim*, Seyong Oh*, Myungwoo Choi*, and Donghwi Cho*</p>
-          <p class="pub-journal">Nature Communications (accepted, 2026)</p>
-        </div>
-      </div>
-
-      <div class="pub-item" data-category="accepted">
-        <p class="pub-num">[6]</p>
-        <div>
-          <span class="pub-badge accepted">Accepted</span>
-          <p class="pub-title">Activation-Free Gas Sensing via Physisorption-Engineered 3D van der Waals Nanoarchitectures</p>
-          <p class="pub-authors"><strong>Hwanseok Chang†</strong>, Sunwoo Lee†, Youngkwon Kim†, Yea-Lee Lee, Yun-Gyu Lee, Jae Hun Hwang, Gyu-Li Kim, Gye Hyeon Lee, Dong Gyun Hong, Seung Yol Jeong, Yongseong Kim, Hak-Young Ahn, Seonggwang Yoo, Young-Seok Shim, Jung-Hoon Lee, Taeyong Eom, Jeong-O Lee, Seokwoo Jeon, Kwangjae Lee*, Myungwoo Choi*, and Donghwi Cho*</p>
-          <p class="pub-journal">Nature Communications (accepted, 2026)</p>
-        </div>
-      </div>
-
-      <div class="pub-item" data-category="in-prep">
-        <p class="pub-num">[7]</p>
-        <div>
-          <span class="pub-badge in-prep">In Preparation</span>
-          <p class="pub-title">Scalable Diamond-TPMS Ceramic Nanoarchitecture with Shear-Band-Mediated Damage Tolerance</p>
-          <p class="pub-authors">Gwangmin Bae¹,†, <strong>Hwanseok Chang¹,†</strong>, Jihoon Jeong²,†, Tae Hee Lee³, Samuel Hwang¹, Sang-Hyeon Nam⁴, Jung-Wuk Hong³,*, Dongchan Jang²,*, and Seokwoo Jeon¹,*</p>
-          <p class="pub-journal">(In preparation)</p>
-        </div>
-      </div>
-
-      <div class="pub-item" data-category="in-prep">
-        <p class="pub-num">[8]</p>
-        <div>
-          <span class="pub-badge in-prep">In Preparation</span>
-          <p class="pub-title">Prescribed volumetric light-field synthesis for single-exposure 3D nanolithography</p>
-          <p class="pub-authors">Junhyung Park†, <strong>Hwanseok Chang†</strong>, Myungjoon Kim, Nayoung Kim, Gwangmin Bae, Jonghwa Shin*, and Seokwoo Jeon*</p>
-          <p class="pub-journal">(In preparation)</p>
-        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2014.03 &mdash; 2017.02</p>
+        <p class="timeline-role">High School Diploma</p>
+        <p class="timeline-org">Hansung Science High School, Seoul</p>
+        <p class="timeline-detail">Minister of Science and ICT Award, National Science Exhibition</p>
       </div>
     </div>
   </section>
 
-  <!-- Patents // 06 -->
-  <section id="patents" class="fade-in">
+  <!-- Career // 06 -->
+  <section id="career" class="fade-in">
     <p class="section-label">// 06</p>
-    <h2>Patents</h2>
-    <div class="pub-list">
-      <div class="pub-item">
-        <p class="pub-num">[1]</p>
-        <div>
-          <span class="pub-badge patent">Patent Application</span>
-          <p class="pub-title" lang="ko">포토마스크 제조방법 및 이를 기반으로 하는 자이로이드 나노구조의 제조방법</p>
-          <p class="pub-authors">Jonghwa Shin, Junhyung Park, Myungjoon Kim, Nayoung Kim, Seokwoo Jeon, Gwangmin Bae, and <strong>Hwanseok Chang</strong></p>
-          <p class="pub-journal">Korean Patent Application 10-2025-0148095</p>
-        </div>
+    <h2>Career</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2027.01 &mdash; 2027.05 (Tentative)</p>
+        <p class="timeline-role">Planned Research Visit</p>
+        <p class="timeline-org">University of Illinois Urbana-Champaign, USA</p>
+        <p class="timeline-detail">Host: <a href="https://matse.illinois.edu/people/profile/pbraun" target="_blank" rel="noopener noreferrer">Prof. Paul V. Braun</a>, Department of Materials Science and Engineering.</p>
       </div>
-
-      <div class="pub-item">
-        <p class="pub-num">[2]</p>
-        <div>
-          <span class="pub-badge patent">Patent Application</span>
-          <p class="pub-title" lang="ko">포토마스크 제조방법 및 이를 기반으로 하는 다이아몬드 또는 장작더미 나노구조의 제조방법</p>
-          <p class="pub-authors">Jonghwa Shin, Junhyung Park, Myungjoon Kim, Nayoung Kim, Seokwoo Jeon, Gwangmin Bae, and <strong>Hwanseok Chang</strong></p>
-          <p class="pub-journal">Korean Patent Application 10-2025-0148102</p>
-        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot current"></div>
+        <p class="timeline-period">2025.03 &mdash; Present</p>
+        <p class="timeline-role">Ph.D. Candidate</p>
+        <p class="timeline-org">Department of Materials Science and Engineering, Korea University, Seoul</p>
+        <p class="timeline-detail">Nanomaterials for Electronics and Optics Lab.</p>
       </div>
-
-      <div class="pub-item">
-        <p class="pub-num">[3]</p>
-        <div>
-          <span class="pub-badge in-prep">Planned Application</span>
-          <p class="pub-title" lang="ko">위상 제어 2단계 근접장 나노패터닝을 이용한 대면적 다이아몬드형 삼중주기 최소곡면 나노구조체, 이를 포함하는 경량·고강도 구조재료 및 그 제조방법</p>
-          <p class="pub-authors">Seokwoo Jeon, Dongchan Jang, Gwangmin Bae, <strong>Hwanseok Chang</strong>, and Jihoon Jeong</p>
-          <p class="pub-journal">Korean Patent Application planned (Management No. DP 2026-0900)</p>
-        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2022.09 &mdash; 2022.12</p>
+        <p class="timeline-role">Research Intern</p>
+        <p class="timeline-org">Electronic Materials Research Center, KIST, Seoul</p>
+        <p class="timeline-detail">Electronic Thin Films Lab.</p>
       </div>
     </div>
   </section>
 
-  <!-- Research Interests // 07 -->
-  <section id="interests" class="fade-in">
-    <p class="section-label">// 07</p>
-    <h2>Research Interests</h2>
-    <div class="about-interests">
-      <div class="interest-item"><div class="interest-dot"></div><span>Inverse design and AI-assisted optimization of 3D nanoarchitectures</span></div>
-      <div class="interest-item"><div class="interest-dot"></div><span>Scalable 3D nanofabrication</span></div>
-      <div class="interest-item"><div class="interest-dot"></div><span>Architected materials and metamaterials for sensing, structural, photonic applications</span></div>
-      <div class="interest-item"><div class="interest-dot"></div><span>Material conversion</span></div>
-    </div>
-  </section>
-
-  <!-- Technical Skills // 08 -->
-  <section id="skills" class="fade-in">
-    <p class="section-label">// 08</p>
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <p class="skill-category">Simulation, AI &amp; Programming</p>
-        <div class="skill-tags">
-          <span class="skill-tag">FDTD (Lumerical)</span>
-          <span class="skill-tag">RCWA (Lumerical)</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">inverse optimization/PSO</span>
-          <span class="skill-tag">AI-assisted scientific programming</span>
-          <span class="skill-tag">machine-learning model training</span>
-          <span class="skill-tag">data analysis and automation</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <p class="skill-category">Nanofabrication</p>
-        <div class="skill-tags">
-          <span class="skill-tag">E-beam lithography</span>
-          <span class="skill-tag">3D/proximity-field lithography</span>
-          <span class="skill-tag">photomask processing</span>
-          <span class="skill-tag">mask aligner</span>
-          <span class="skill-tag">nanoimprint/PER processing</span>
-          <span class="skill-tag">ALD</span>
-          <span class="skill-tag">e-beam evaporation</span>
-          <span class="skill-tag">FIB</span>
-          <span class="skill-tag">ellipsometry</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <p class="skill-category">Characterization</p>
-        <div class="skill-tags">
-          <span class="skill-tag">SEM</span>
-          <span class="skill-tag">TEM</span>
-          <span class="skill-tag">XRD</span>
-          <span class="skill-tag">XPS</span>
-          <span class="skill-tag">Raman</span>
-          <span class="skill-tag">GIWAXS</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact // 09 -->
+  <!-- Contact // 07 -->
   <section id="contact" class="fade-in">
-    <p class="section-label">// 09</p>
+    <p class="section-label">// 07</p>
     <h2>Contact</h2>
     <div class="contact-grid">
       <a href="mailto:andyww11@korea.ac.kr" class="contact-item">
@@ -981,14 +863,10 @@
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   function filterPubs(type, btn) {
-    document.querySelectorAll('#publications .pub-filter-btn').forEach(b => {
-      b.classList.toggle('active', b === btn);
-      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-    });
-    document.querySelectorAll('#publications .pub-item').forEach(item => {
-      const matches = type === 'all' || item.dataset.category === type ||
-        (type === 'published' && item.dataset.category === 'accepted');
-      item.hidden = !matches;
+    document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pub-item').forEach(item => {
+      item.style.display = (type === 'all' || item.dataset.category === type) ? 'grid' : 'none';
     });
   }
 
